@@ -1,2 +1,7 @@
-# todo
-A simple TODO application using ES6 modules and webpack.
+# Weather app
+Simple front end weather app, made using the weatherapi.com API.
+This app demonstrates the use of:
+* ES6 modules
+* ES7 async await
+* Webpack
+* NodeJS
