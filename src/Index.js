@@ -7,7 +7,7 @@ const App = (function () {
   PubSub.subscribe("CITY_CHANGED", CityChanged);
 
   const apiKey = "3e5e3012454b47aba7d195512230712";
-  const baseApiUrl = "http://api.weatherapi.com/v1/";
+  const baseApiUrl = "https://api.weatherapi.com/v1/";
 
   const days = 7;
 
