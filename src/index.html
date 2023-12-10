@@ -6,7 +6,32 @@
     <title>Weather App</title>
   </head>
   <body>
-    <div class="sect today"></div>
-    <div class="sect week"></div>
+    <header class="df fdr alic jcsa header">
+      <span class="logo">weather app</span>
+      <form action="submit" class="form">
+        <input type="text" class="search" />
+        <button class="search-btn">Search</button>
+      </form>
+    </header>
+
+    <main class="df fdc all-alc content">
+      <div class="df fdc all-alc today">
+        <h2 class="city"></h2>
+        <h3 class="city-info"></h3>
+        <h3 class="date"></h3>
+        <div class="df fdc all-alc left">
+          <div class="df fdr all-alc">
+            <img src="#" alt="today weather icon" class="today-icon" />
+            <span class="today-temp"></span>
+          </div>
+          <span class="today-condition"></span>
+          <span class="today-feels-like"></span>
+          <span class="today-wind"></span>
+        </div>
+        <div class="dg grid-3c right"></div>
+      </div>
+
+      <div class="df fdc all-alc week"></div>
+    </main>
   </body>
 </html>

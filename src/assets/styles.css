@@ -1,0 +1,35 @@
+:root {
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.df {
+  display: flex;
+}
+
+.fdr {
+  flex-direction: row;
+}
+
+.fdc {
+  flex-direction: column;
+}
+
+.all-alc {
+  justify-content: center;
+  align-items: center;
+}
+
+.dg {
+  display: grid;
+}
+
+.grid-3c {
+  grid-template-columns: repeat(3, 1fr);
+}
