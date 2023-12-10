@@ -1,14 +1,24 @@
-import ForecastHtml from "./forecast-item.html";
+import ForecastHtml from "./forecast-item-template.html";
 
-function CreateForecastItem(name) {
-  const container = document.createElement("div");
-  container.classList = "df dfr all-alc forecast-item";
+function CreateForecastElement() {
+  const container = document.createElement("tr");
+  //container.classList = "df fdr all-alc forecast-item";
   container.innerHTML = ForecastHtml;
 
-  const day = document.querySelector("#day");
-  const day = document.querySelector("#morning-temp");
+  const day = container.querySelector("#day");
+  const averageTemp = container.querySelector("#avg-temp");
+  const condition = container.querySelector("#cond");
+  const averageHum = container.querySelector("#avg-hum");
+  const chanceOfRain = container.querySelector("#chance-of-rain");
 
-  return {};
+  return {
+    container,
+    day,
+    averageTemp,
+    condition,
+    averageHum,
+    chanceOfRain,
+  };
 }
 
-export default CreateForecastItem;
+export default CreateForecastElement;

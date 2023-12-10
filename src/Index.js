@@ -9,6 +9,8 @@ const App = (function () {
   const apiKey = "3e5e3012454b47aba7d195512230712";
   const baseApiUrl = "http://api.weatherapi.com/v1/";
 
+  const days = 7;
+
   const infoOptions = [
     { name: "UV Index", token: "uv" },
     { name: "Humidity", token: "humidity" },
@@ -20,11 +22,11 @@ const App = (function () {
 
   function Init() {
     //Initialize DOMHandler
-    DOMHandler.Init(infoOptions);
+    DOMHandler.Init(infoOptions, 7);
     CityChanged();
   }
 
-  async function GetWeatherData(city, days) {
+  async function GetWeatherData(city) {
     const response = await fetch(
       baseApiUrl + `forecast.json?key=${apiKey}&q=${city}&days=${days}`,
       {
@@ -35,9 +37,9 @@ const App = (function () {
     return weatherData;
   }
 
-  async function CityChanged(city = "New York", days = 7) {
-    const weatherData = await GetWeatherData(city, days);
-    console.log(await weatherData);
+  async function CityChanged(msg, city = "New York") {
+    const weatherData = await GetWeatherData(city);
+    console.log(await weatherData.forecast);
 
     SendDataToDOMHandler(weatherData);
   }
@@ -45,6 +47,7 @@ const App = (function () {
   function SendDataToDOMHandler(weatherData) {
     DOMHandler.UpdateToday(weatherData);
     DOMHandler.UpdateTodayInfo(weatherData, infoOptions);
+    DOMHandler.UpdateForecast(weatherData.forecast, days);
   }
 
   Init();
